@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
         required: [true, "Email is required and it should be unique"],
         unique: true,
     },
-    passward: {
+    password: {
         type: String,
         required: [true, "Passward is required"],
 
