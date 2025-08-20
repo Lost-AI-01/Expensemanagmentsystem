@@ -25,11 +25,14 @@ app.get('/',(req,res) => {
 
 //port
 
-const PORT = 8080 || process.env.PORT
+require("dotenv").config();
 
-//listen server
+
+
+
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
-    console.log('server running on port ${PORT}')
+    console.log(`Server running on port ${PORT}`);
 });
 
