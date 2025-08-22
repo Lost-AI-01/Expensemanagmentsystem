@@ -1,19 +1,16 @@
 import react from 'react'
  import {Form, Input} from 'antd'
 import { Link } from 'react-router-dom';
- const Register = () => {
+ const Login = () => {
     //from submit 
     const submitHandler = (values) => {
         console.log(values);
     }
      return(
          <>
-             <div className='register-page'>
+             <div className='login-page'>
                  <Form layout='vertical' onFinish={submitHandler}>
-                     <h1>Register Form</h1>
-                     <Form.Item label="Name" name="name">
-                         <Input />
-                     </Form.Item>
+                     <h1>Login Form</h1>
                       <Form.Item label="Email" name="email">
                          <Input type='email' />
                      </Form.Item>
@@ -21,8 +18,8 @@ import { Link } from 'react-router-dom';
                          <Input type='password' />
                      </Form.Item>
                      <div className='d-flex justify-content-between'>
-                        <Link to="/login" >Already Register ? click here to login</Link>
-                        <button className='btn btn-primary' >Register</button>
+                        <Link to="/register" >Not a user ? click here to Register</Link>
+                        <button className='btn btn-primary' >Login</button>
                      </div>
                  </Form>
              </div>
@@ -30,7 +27,4 @@ import { Link } from 'react-router-dom';
      )
  }
 
-export default Register;
-
-
-
+ export default Login;
