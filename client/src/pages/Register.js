@@ -10,7 +10,7 @@ import Spinner from "../components/spinner";
     const submitHandler = async(values) => {
         try {
             setloading(true)
-            await axios.post('/users/register', values)
+            await axios.post('http://localhost:8080/api/v1/users/register', values)
             message.success('Registration Successful')
             setloading(false)
             navigate('/login')
@@ -25,13 +25,13 @@ import Spinner from "../components/spinner";
                 {loading && <spinner />}
                  <Form layout='vertical' onFinish={submitHandler}>
                      <h1>Register Form</h1>
-                     <Form.Item label="Name" name="name">
+                     <Form.Item label="name" name="name">
                          <Input />
                      </Form.Item>
-                      <Form.Item label="Email" name="email">
+                      <Form.Item label="email" name="email">
                          <Input type='email' />
                      </Form.Item>
-                      <Form.Item label="Password" name="password">
+                      <Form.Item label="password" name="password">
                          <Input type='password' />
                      </Form.Item>
                      <div className='d-flex justify-content-between'>

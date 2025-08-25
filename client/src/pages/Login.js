@@ -10,10 +10,11 @@ import Spinner from "../components/spinner";
     const submitHandler = async(values) => {
         try {
             setloading(true)
-           const {data } =  await axios.post('/users/login', values)
+           const {data } =  await axios.post('http://localhost:8080/api/v1/users/login', values)
            setloading(false)
            message.success('login success')
-           localStorage.setItem('user', JSON.stringify({...data, password:''}))
+           localStorage.setItem('user', JSON.stringify({...data.user, password:""}));
+           navigate("/")
         } catch (error) {
             setloading(false)
             message.error('Something went wrong')
@@ -26,10 +27,10 @@ import Spinner from "../components/spinner";
                 {loading && <spinner />}
                  <Form layout='vertical' onFinish={submitHandler}>
                      <h1>Login Form</h1>
-                      <Form.Item label="Email" name="email">
+                      <Form.Item label="email" name="email">
                          <Input type='email' />
                      </Form.Item>
-                      <Form.Item label="Password" name="password">
+                      <Form.Item label="password" name="password">
                          <Input type='password' />
                      </Form.Item>
                      <div className='d-flex justify-content-between'>
