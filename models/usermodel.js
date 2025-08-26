@@ -1,20 +1,25 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-//Schema designs. login form creating here
-
-const userSchema = new mongoose.Schema({
+//schema design
+const userSchema = new mongoose.Schema(
+  {
     name: {
-        type: String,
-        required: [true, "name is required"],
+      type: String,
+      required: [true, "name is required"],
     },
     email: {
-        type: String,
-        required: [true, "Email is required and it should be unique"],
-        
+      type: String,
+      required: [true, "email is required and should be unique"],
+      unique: true,
     },
     password: {
-        type: String,
-        required: [true, "Passward is required"],
-        unique: true,
+      type: String,
+      required: [true, "password is required"],
     },
-},{timestamps: true});
+  },
+  { timestamps: true }
+);
+
+//export
+const userModel = mongoose.model("users", userSchema);
+module.exports = userModel;
