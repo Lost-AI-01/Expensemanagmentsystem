@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Form, Input, message } from "antd";
 import { Link, useNavigate } from "react-router-dom";
+import Spinner from "../components/spinner";
 import axios from "axios";
 const Login = () => {
   const [loading, setLoading] = useState(false);
