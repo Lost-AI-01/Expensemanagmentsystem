@@ -1,19 +1,25 @@
+const mongoose = require("mongoose");
 
-const express = require('express');
-const { 
-    loginController,
-    registerController,
- } = require('../controllers/userController.js');
+//schema design
+const userSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: [true, "name is required"],
+    },
+    email: {
+      type: String,
+      required: [true, "email is required and should be unique"],
+      unique: true,
+    },
+    password: {
+      type: String,
+      required: [true, "password is required"],
+    },
+  },
+  { timestamps: true }
+);
 
-// router object
-const router = express.Router();
-
-// routers
-// POST || LOGIN USER
-router.post('/login', loginController);
-
-// POST || REGISTER USER
-router.post('/register', registerController);
-
-module.exports = router;
-
+//export
+const userModel = mongoose.model("users", userSchema);
+module.exports = userModel;
