@@ -21,3 +21,15 @@
     justify-content: center;
     height: 90vh;
 }
+
+.footer{
+  text-decoration-color: black;
+  position: fixed;     /* Sticks to viewport */
+  bottom: 0;           /* Pushes to bottom */
+  left: 0;
+  width: 100%;         /* Full width */
+  background: #2c2929;    /* Strip color */
+  color: black;        /* Text color */
+  text-align: center;  /* Center text */
+  padding: 1px;
+}

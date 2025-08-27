@@ -30,4 +30,5 @@ export function ProtectedRoutes(props) {
   }
 }
 
+
 export default App;
