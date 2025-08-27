@@ -32,7 +32,7 @@ const Login = () => {
   }, [navigate]);
   return (
     <>
-      <div className="resgister-page ">
+      <div className="login-page ">
         {loading && <Spinner />}
         <Form layout="vertical" onFinish={submitHandler}>
           <h1>Login Form</h1>
