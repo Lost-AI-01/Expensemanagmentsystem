@@ -5,6 +5,11 @@ const transectionSchema = new mongoose.Schema({
             type:Number,
             require:[true, 'Amount is required']
         },
+        type:{
+            type:String,
+            require:[true, 'Type is required']
+
+        },
         category:{
             type:String,
             require:[true,'Entering Category is importent']
