@@ -14,13 +14,14 @@
   "description": "Management tracker web",
   "dependencies": {
     "colors": "^1.4.0",
-    "cors": "^2.8.5",
     "concurrently": "^9.2.1",
+    "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "mongoose": "^8.17.0",
     "morgan": "^1.10.1",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
-
 }
