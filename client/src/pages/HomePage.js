@@ -1,12 +1,20 @@
 import React from "react";
-import Layouts from "../components/layout/Layouts.js";
+import Layouts from "./../components/layout/Layouts";
 
 const HomePage = () => {
     return (
         <Layouts>
-        <h1>Home Page</h1>
-        </ Layouts >
+        <div className="filters">
+            <div>range filter</div>
+            <div>
+                <button className="btn btn-primary">Add New</button>
+            </div> 
+        </div>
+        <div className="contents">
+
+        </div>
+        </Layouts>
     )
 }
 
-export default HomePage
+export default HomePage;

@@ -2,6 +2,7 @@ import React, { Children } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 
+
 const Layouts = ({Children}) => {
     return(
         <>
