@@ -22,7 +22,7 @@ app.use(cors());
 // user routes
 app.use("/api/v1/users", require("./routes/userRoute"));
 //transection routes
-app.use("api/v1/transections", require("./routes/transectionRoutes"));
+app.use("/api/v1/transections", require("./routes/transectionRoutes"));
 
 //port
 const PORT = 8080 || process.env.PORT;
