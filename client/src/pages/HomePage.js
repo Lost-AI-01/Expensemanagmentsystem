@@ -13,30 +13,24 @@ const HomePage = () => {
     //table data
     const columns = [
         {
-            title:'Date',
-            dataIndex:'date'
+            title:"Date",
+            dataIndex:"date"
         },
         {
-            title:'Date',
-            dataIndex:'date'
+            title:"Type",
+            dataIndex:"type"
         },
         {
-            title:'Date',
-            dataIndex:'date'
+            title:"Category",
+            dataIndex:"category"
         },
         {
-            title:'Date',
-            dataIndex:'date'
+            title:"Reference",
+            dataIndex:"reference"
         },
         {
-            title:'Date',
-            dataIndex:'date'
+            title:"Actions",
         },
-        {
-            title:'Date',
-            dataIndex:'date'
-        },
-
 
     ]
 
@@ -84,7 +78,7 @@ const HomePage = () => {
                 <button className="btn btn-primary" onClick={() => setShowModal(true)}>Add New</button>
             </div> 
         </div>
-        <div className="contents">
+        <div className="content">
 
         </div>
         <Modal title="Add Transection"
