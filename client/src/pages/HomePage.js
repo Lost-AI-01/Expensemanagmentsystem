@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {Button, Form, Modal, Select, Input, message} from "antd";
 import Layouts from "./../components/layout/Layouts";
 import Footer from "../components/layout/Footer";
@@ -8,7 +8,57 @@ import Spinner from "../components/Spinner";
 const HomePage = () => {
     const [showModal, setShowModal] = useState(false);
     const [loading, setLoading] = useState(false);
-    const [form] = Form.useForm();
+    const [allTransection , setAllTransection] = useState([])
+
+    //table data
+    const columns = [
+        {
+            title:'Date',
+            dataIndex:'date'
+        },
+        {
+            title:'Date',
+            dataIndex:'date'
+        },
+        {
+            title:'Date',
+            dataIndex:'date'
+        },
+        {
+            title:'Date',
+            dataIndex:'date'
+        },
+        {
+            title:'Date',
+            dataIndex:'date'
+        },
+        {
+            title:'Date',
+            dataIndex:'date'
+        },
+
+
+    ]
+
+    // get all transections
+    const getAllTransections = async(values) => {
+        try {
+            const user = JSON.parse(localStorage.getItem('user'));
+            setLoading(true);
+            const res = await axios.post('api/v1/transections/get-transections',{userid: user._id});
+            setLoading(false);
+            setAllTransection(res.data)
+            console.log(res.data)
+        } catch (error) {
+            setLoading(false)
+            console.log(error)
+            message.error('fetched issue with transection')
+        }
+    };
+
+    //use effect hook
+    useEffect(() => {
+        getAllTransections();}, [ ]);
 
     //form handling 
     const handleSubmit = async (values) => {
@@ -41,7 +91,7 @@ const HomePage = () => {
          open={showModal} 
          onCancel={() => setShowModal(false) } 
          footer={false}>
-            <Form layout="vertical" onFinish={handleSubmit} form={form}>
+            <Form layout="vertical" onFinish={handleSubmit} >
                 <Form.Item label="Amount" name="amount">
                     <Input placeholder="Enter amount" />
                 </Form.Item>
